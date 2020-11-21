@@ -38,6 +38,8 @@ function App() {
   const [types, setTypes] = useState([]);
   const [meanings, setMeanings] = useState('');
 
+  console.log(word);
+
   const handleClick = () => {
     setDataList([...dataList, {
       "meanings": ["มาพร้อมกับ"],
@@ -59,6 +61,7 @@ function App() {
           <Input
             id='word-input'
             placeholder="English word"
+            onChange={(e) => { setWord(e.target.value) }}
           />
         </div>
 
@@ -72,6 +75,7 @@ function App() {
             options={typeOptions}
             mode="multiple"
             placeholder="Select types"
+            onChange={(values) => { setTypes(values) }}
           />
         </div>
 
