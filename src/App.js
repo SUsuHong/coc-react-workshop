@@ -9,6 +9,14 @@ const StyledWrapper = styled.div`
   @media(max-width: 425px) {
     padding: 20px 10px;
   }
+
+  .select-types {
+    width: 100%;
+  }
+
+  .form-item {
+    margin-bottom: 10px;
+  }
 `;
 
 const types = [
@@ -43,18 +51,31 @@ function App() {
 
       <div>
 
-        <div>
+        <div className='form-item'>
           <div>
             <label htmlFor='word-input'>Word</label>
           </div>
           <Input id='word-input' placeholder="English word" />
         </div>
 
-        <div>
+        <div className='form-item'>
           <div>
             <label htmlFor='select-types'>Types</label>
           </div>
-          <Select id='select-types' options={types} mode="multiple" />
+          <Select
+            className='select-types'
+            id='select-types'
+            options={types}
+            mode="multiple"
+            placeholder="Select types"
+          />
+        </div>
+
+        <div className='form-item'>
+          <div>
+            <label htmlFor='meaning-input'>Meanings</label>
+          </div>
+          <Input id='meaning-input' placeholder="Meanings" />
         </div>
 
 
