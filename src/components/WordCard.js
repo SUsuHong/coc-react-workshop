@@ -20,6 +20,7 @@ const StyledWrapper = styled.div`
 `
 
 const WordCard = (props) => {
+
     return (
         <StyledWrapper>
             <div className='top'>
@@ -27,7 +28,10 @@ const WordCard = (props) => {
                     <b>{props.word}</b>
                     <span> ({props.types.join(", ")})</span>
                 </div>
-                <DeleteOutlined className='delete-icon'/>
+                <DeleteOutlined 
+                    className='delete-icon' 
+                    onClick={props.onDelete}
+                />
             </div>
             <div>
                 {props.meanings.join(", ")}
