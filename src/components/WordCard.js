@@ -4,7 +4,6 @@ import { DeleteOutlined } from '@ant-design/icons';
 
 const StyledWrapper = styled.div`
     box-shadow: 0 0 10px 0 rgba(0,0,0,.25);
-    margin: 16px;
     padding: 8px;
     border-radius: 8px;
 
