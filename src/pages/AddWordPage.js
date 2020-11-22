@@ -1,6 +1,7 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import styled from 'styled-components';
 import { Input, Select, Button } from 'antd';
+import AppContext from '../context/AppContext'
 
 const StyedWrapper = styled.div`
     padding: 20px 10%;
@@ -29,17 +30,18 @@ const typeOptions = [
 
 const AddWordPage = () => {
 
+    const { vocabs, setVocabs } = useContext(AppContext);
+
     const [word, setWord] = useState('');
     const [types, setTypes] = useState([]);
     const [meanings, setMeanings] = useState('');
 
-
     const handleClick = () => {
-        // setDataList([...dataList, {
-        //     word,
-        //     types,
-        //     meanings: meanings.split(",").map((item) => item.trim())
-        // }])
+        setVocabs([...vocabs, {
+            word,
+            types,
+            meanings: meanings.split(",").map((item) => item.trim())
+        }])
     }
 
     return (
