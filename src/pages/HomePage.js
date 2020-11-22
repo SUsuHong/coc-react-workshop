@@ -22,14 +22,8 @@ const StyledWrapper = styled.div`
 
 function HomePage() {
 
-  const { vocabs, setVocabs } = useContext(AppContext);
-
-  const handleDelete = (index) => {
-    const newArr = vocabs.filter((data, id) => {
-      return id !== index
-    });
-    setVocabs(newArr);
-  }
+  const { vocabController } = useContext(AppContext);
+  const { vocabs, deleteVocab } = vocabController;
 
   return (
     <StyledWrapper>
@@ -38,7 +32,7 @@ function HomePage() {
         {vocabs.map((item, index) => {
           return (
             <Col key={index} xs={24} sm={12} md={8} lg={6} >
-              <WordCard  {...item} onDelete={() => { handleDelete(index) }} />
+              <WordCard  {...item} onDelete={() => { deleteVocab(index) }} />
             </Col>
           )
         })}
