@@ -4,6 +4,7 @@ const initData = [{ "meanings": ["มาพร้อมกับ"], "word": "Acc
 
 const VocabController = () => {
 
+    
     const [vocabs, setVocabs] = useState(initData);
 
     const addVocab = (word, types, meanings) => {
